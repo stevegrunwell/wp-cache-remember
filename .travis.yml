@@ -47,7 +47,7 @@ script:
     fi
   - |
     if [[ ${RUN_PHPCS} == 1 ]]; then
-      ./vendor/phpcs
+      ./vendor/bin/phpcs
     fi
 
 after_success:
