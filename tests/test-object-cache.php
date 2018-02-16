@@ -6,7 +6,7 @@
  */
 
 /**
- * Sample test case.
+ * Object cache test case.
  */
 class ObjectCacheTest extends WP_UnitTestCase {
 
