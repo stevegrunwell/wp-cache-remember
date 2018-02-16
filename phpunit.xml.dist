@@ -13,4 +13,9 @@
 			<exclude>./tests/test-sample.php</exclude>
 		</testsuite>
 	</testsuites>
+	<filter>
+		<whitelist>
+			<file>wp-cache-remember.php</file>
+		</whitelist>
+	</filter>
 </phpunit>
