@@ -41,9 +41,10 @@ before_script:
 
 script:
   - |
-    if [[ ! -z "$WP_VERSION" ]]; then
+    if [[ ${RUN_CODE_COVERAGE} ]]; then
+      phpunit --coverage-clover build/logs/clover.xml
+    else
       phpunit
-      WP_MULTISITE=1 phpunit
     fi
   - |
     if [[ ${RUN_PHPCS} == 1 ]]; then
