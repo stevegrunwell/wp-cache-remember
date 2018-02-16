@@ -63,6 +63,12 @@ Then, from within your plugin, simply include or require the file:
 require_once __DIR__ . '/includes/wp-cache-remember/wp-cache-remember.php';
 ```
 
+### Using as a plugin
+
+If you'd prefer, the package also includes the necessary file headers to be used as a WordPress plugin.
+
+After downloading or cloning the package, move `wp-cache-remember.php` into either your `wp-content/mu-plugins/` (preferred) or `wp-content/plugins/` directory. If you chose the regular plugins directory, you'll need to activate the plugin manually via the Plugins &rsaquo; Installed Plugins page within WP Admin.
+
 ## Usage
 
 WP Cache Remember provides the following functions for WordPress:
