@@ -21,6 +21,7 @@ matrix:
       env: WP_VERSION=latest
     - php: 5.3
       env: WP_VERSION=latest
+      dist: precise
 
 before_script:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
