@@ -60,7 +60,7 @@ The package ships with the [`composer/installers` package](https://github.com/co
 Then, from within your plugin, simply include or require the file:
 
 ```php
-require_once __DIR__ . '/includes/wp-cache-remember';
+require_once __DIR__ . '/includes/wp-cache-remember/wp-cache-remember.php';
 ```
 
 ## Usage
