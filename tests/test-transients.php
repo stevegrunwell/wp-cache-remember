@@ -1,6 +1,6 @@
 <?php
 /**
- * Tests for the transient functions
+ * Tests for the transient functions.
  *
  * @package Wp_Cache_Remember
  */

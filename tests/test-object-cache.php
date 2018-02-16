@@ -1,6 +1,6 @@
 <?php
 /**
- * Tests for the object cache functions
+ * Tests for the object cache functions.
  *
  * @package Wp_Cache_Remember
  */
