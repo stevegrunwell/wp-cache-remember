@@ -15,7 +15,8 @@ class ObjectCacheTest extends WP_UnitTestCase {
 		$callback = function () {
 			return uniqid();
 		};
-		$value    = wp_cache_remember( $key, $callback );
+
+		$value = wp_cache_remember( $key, $callback );
 
 		$this->assertEquals(
 			$value,

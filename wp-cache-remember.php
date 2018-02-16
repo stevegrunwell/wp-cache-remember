@@ -45,9 +45,9 @@ if ( ! function_exists( 'wp_cache_forget' ) ) :
 	/**
 	 * Retrieve a value from the object cache and subsequently delete the value from the object cache.
 	 *
-	 * @param string   $key     The cache key.
-	 * @param string   $group   Optional. The cache group. Default is empty.
-	 * @param mixed    $default Optional. The default value to return if the given key doesn't
+	 * @param string $key     The cache key.
+	 * @param string $group   Optional. The cache group. Default is empty.
+	 * @param mixed  $default Optional. The default value to return if the given key doesn't
 	 *                          exist in the object cache. Default is null.
 	 *
 	 * @return mixed The cached value, when available, or $default.
