@@ -1,5 +1,6 @@
 sudo: false
 language: php
+dist: trusty
 
 notifications:
   email: never
@@ -9,9 +10,8 @@ cache:
     - $HOME/.composer/cache
 
 matrix:
-
+  fast_finish: true
   include:
-    fast_finish: true
     - php: 7.2
       env: WP_VERSION=trunk
     - php: 7.2
@@ -20,9 +20,6 @@ matrix:
       env: WP_VERSION=latest
     - php: 7.0
       env: WP_VERSION=latest
-    - php: 5.3
-      env: WP_VERSION=latest
-      dist: precise
 
 before_script:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
