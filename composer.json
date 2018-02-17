@@ -1,14 +1,25 @@
 {
     "name": "stevegrunwell/wp-cache-remember",
     "description": "Helper for the WordPress object cache and transients",
-    "type": "wordpress-plugin",
+    "type": "wordpress-muplugin",
     "license": "MIT",
+    "keywords": [
+        "wordpress",
+        "wordpress-plugin",
+        "wordpress-object-cache",
+        "wordpress-transients"
+    ],
     "authors": [
         {
             "name": "Steve Grunwell",
-            "email": "steve@stevegrunwell.com"
+            "email": "steve@stevegrunwell.com",
+            "homepage": "https://stevegrunwell.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/stevegrunwell/wp-cache-remember/issues",
+        "source": "https://github.com/stevegrunwell/wp-cache-remember"
+    },
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.2",
