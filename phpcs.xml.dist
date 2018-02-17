@@ -12,6 +12,13 @@
 	<!-- Show progress and sniff codes in all reports -->
 	<arg value="ps"/>
 
+	<!-- Scan for compatibility with PHP >= 5.2. -->
+	<rule ref="PHPCompatibility">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+	<config name="testVersion" value="5.2-"/>
+
+	<!-- Don't worry about missing function comments in the test files. -->
 	<rule ref="Squiz.Commenting.FunctionComment.Missing">
 		<exclude-pattern>tests/*</exclude-pattern>
 	</rule>

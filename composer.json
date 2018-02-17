@@ -11,12 +11,13 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.3",
+        "php": ">=5.2",
         "composer/installers": "^1.5"
     },
     "require-dev": {
-      "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-      "wp-coding-standards/wpcs": "^0.14"
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+        "wimg/php-compatibility": "^8.1",
+        "wp-coding-standards/wpcs": "^0.14"
     },
     "autoload": {
       "files": ["wp-cache-remember.php"]
