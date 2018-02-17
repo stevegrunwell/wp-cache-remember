@@ -69,6 +69,12 @@ If you'd prefer, the package also includes the necessary file headers to be used
 
 After downloading or cloning the package, move `wp-cache-remember.php` into either your `wp-content/mu-plugins/` (preferred) or `wp-content/plugins/` directory. If you chose the regular plugins directory, you'll need to activate the plugin manually via the Plugins &rsaquo; Installed Plugins page within WP Admin.
 
+### Bundling within a plugin or theme
+
+WP Cache Remember has been built in a way that it can be easily bundled within a WordPress plugin or theme, even commercially.
+
+Each function declaration is wrapped in appropriate `function_exists()` checks, ensuring that multiple copies of the library can co-exist in the same WordPress environment.
+
 ## Usage
 
 WP Cache Remember provides the following functions for WordPress:
@@ -82,7 +88,7 @@ WP Cache Remember provides the following functions for WordPress:
 
 ### wp_cache_remember()
 
-Retrieve a value from the object cache. If it doesn't exist, run the $callback to generate and cache the value.
+Retrieve a value from the object cache. If it doesn't exist, run the `$callback` to generate and cache the value.
 
 #### Parameters
 
@@ -140,7 +146,7 @@ function show_error_message() {
 
 ### remember_transient()
 
-Retrieve a value from transients. If it doesn't exist, run the $callback to generate and cache the value.
+Retrieve a value from transients. If it doesn't exist, run the `$callback` to generate and cache the value.
 
 #### Parameters
 
@@ -181,7 +187,7 @@ Retrieve and subsequently delete a value from the transient cache.
 
 ### remember_site_transient()
 
-Retrieve a value from site transients. If it doesn't exist, run the $callback to generate and cache the value.
+Retrieve a value from site transients. If it doesn't exist, run the `$callback` to generate and cache the value.
 
 This function shares arguments and behavior with [`remember_transient()`](#remember_transient), but works network-wide when using WordPress Multisite.
 

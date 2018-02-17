@@ -99,7 +99,7 @@ if ( ! function_exists( 'forget_transient' ) ) :
 	 *
 	 * @param string $key     The transient key.
 	 * @param mixed  $default Optional. The default value to return if the given key doesn't
-	 *                          exist in transients. Default is null.
+	 *                        exist in transients. Default is null.
 	 *
 	 * @return mixed The cached value, when available, or $default.
 	 */
@@ -149,7 +149,7 @@ if ( ! function_exists( 'forget_site_transient' ) ) :
 	 *
 	 * @param string $key     The site transient key.
 	 * @param mixed  $default Optional. The default value to return if the given key doesn't
-	 *                          exist in the site transients. Default is null.
+	 *                        exist in the site transients. Default is null.
 	 *
 	 * @return mixed The cached value, when available, or $default.
 	 */
