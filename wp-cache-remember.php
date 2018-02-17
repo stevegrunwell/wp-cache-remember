@@ -5,9 +5,7 @@
  * Description: Helper for the WordPress object cache and transients.
  * Author:      Steve Grunwell
  * Author URI:  https://stevegrunwell.com
- * Text Domain: wp-cache-remember
- * Domain Path: /languages
- * Version:     0.1.0
+ * Version:     1.0.0
  *
  * @package SteveGrunwell\WPCacheRemember
  */
