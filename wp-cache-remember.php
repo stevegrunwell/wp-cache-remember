@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WP Cache Remember
- * Plugin URI:  PLUGIN SITE HERE
+ * Plugin URI:  https://github.com/stevegrunwell/wp-cache-remember
  * Description: Helper for the WordPress object cache and transients.
  * Author:      Steve Grunwell
  * Author URI:  https://stevegrunwell.com
