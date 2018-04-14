@@ -2,7 +2,7 @@
 /**
  * Tests for the transient functions.
  *
- * @package Wp_Cache_Remember
+ * @package SteveGrunwell\WPCacheRemember
  */
 
 /**
@@ -24,6 +24,32 @@ class TransientTest extends WP_UnitTestCase {
 			'Expected the same value to be returned on subsequent requests.'
 		);
 		$this->assertEquals( $value, get_transient( $key ) );
+	}
+
+	function test_does_not_remember_exceptions() {
+		$key = 'some-cache-key-' . uniqid();
+
+		try {
+			remember_transient( $key, function () {
+				throw new Exception( 'Something went wrong!' );
+			} );
+
+		} catch ( Exception $e ) {
+			$this->assertFalse( get_transient( $key ), 'Expected the exception to not be cached.' );
+			return;
+		}
+
+		$this->fail( 'Did not receive expected exception!' );
+	}
+
+	function test_does_not_remember_wp_errors() {
+		$key = 'some-cache-key-' . uniqid();
+
+		remember_transient( $key, function () {
+			return new WP_Error( 'code', 'Something went wrong!' );
+		} );
+
+		$this->assertFalse( get_transient( $key ), 'Expected the WP_Error to not be cached.' );
 	}
 
 	function test_remember_pulls_from_cache() {

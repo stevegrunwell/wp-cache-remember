@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/stevegrunwell/wp-cache-remember.svg?branch=develop)](https://travis-ci.org/stevegrunwell/wp-cache-remember)
 [![Coverage Status](https://coveralls.io/repos/github/stevegrunwell/wp-cache-remember/badge.svg?branch=develop)](https://coveralls.io/github/stevegrunwell/wp-cache-remember?branch=develop)
+[![GitHub release](https://img.shields.io/github/release/stevegrunwell/wp-cache-remember.svg)](https://github.com/stevegrunwell/wp-cache-remember/releases)
 
 WP Cache Remember is a simple WordPress include to introduce convenient new caching functions.
 
@@ -85,6 +86,8 @@ WP Cache Remember provides the following functions for WordPress:
 * [`forget_transient()`](#forget_transient)
 * [`remember_site_transient()`](#remember_site_transient)
 * [`forget_site_transient()`](#forget_site_transient)
+
+Each function checks the response of the callback for a `WP_Error` object, ensuring you're not caching temporary errors for long periods of time. PHP Exceptions will also not be cached.
 
 ### wp_cache_remember()
 

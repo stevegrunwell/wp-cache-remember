@@ -5,7 +5,7 @@
  * Description: Helper for the WordPress object cache and transients.
  * Author:      Steve Grunwell
  * Author URI:  https://stevegrunwell.com
- * Version:     1.0.0
+ * Version:     1.1.0
  *
  * @package SteveGrunwell\WPCacheRemember
  */
@@ -33,7 +33,9 @@ if ( ! function_exists( 'wp_cache_remember' ) ) :
 
 		$value = $callback();
 
-		wp_cache_set( $key, $value, $group, $expire );
+		if ( ! is_wp_error( $value ) ) {
+			wp_cache_set( $key, $value, $group, $expire );
+		}
 
 		return $value;
 	}
@@ -85,7 +87,9 @@ if ( ! function_exists( 'remember_transient' ) ) :
 
 		$value = $callback();
 
-		set_transient( $key, $value, $expire );
+		if ( ! is_wp_error( $value ) ) {
+			set_transient( $key, $value, $expire );
+		}
 
 		return $value;
 	}
@@ -135,7 +139,9 @@ if ( ! function_exists( 'remember_site_transient' ) ) :
 
 		$value = $callback();
 
-		set_site_transient( $key, $value, $expire );
+		if ( ! is_wp_error( $value ) ) {
+			set_site_transient( $key, $value, $expire );
+		}
 
 		return $value;
 	}

@@ -2,7 +2,7 @@
 /**
  * PHPUnit bootstrap file
  *
- * @package Wp_Cache_Remember
+ * @package SteveGrunwell\WPCacheRemember
  */
 
 $_tests_dir = getenv( 'WP_TESTS_DIR' );
