@@ -87,6 +87,8 @@ WP Cache Remember provides the following functions for WordPress:
 * [`remember_site_transient()`](#remember_site_transient)
 * [`forget_site_transient()`](#forget_site_transient)
 
+Each function checks the response of the callback for a `WP_Error` object, ensuring you're not caching temporary errors for long periods of time. PHP Exceptions will also not be cached.
+
 ### wp_cache_remember()
 
 Retrieve a value from the object cache. If it doesn't exist, run the `$callback` to generate and cache the value.

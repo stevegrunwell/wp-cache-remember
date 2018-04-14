@@ -2,7 +2,7 @@
 /**
  * Tests for the object cache functions.
  *
- * @package Wp_Cache_Remember
+ * @package SteveGrunwell\WPCacheRemember
  */
 
 /**
@@ -24,6 +24,32 @@ class ObjectCacheTest extends WP_UnitTestCase {
 			'Expected the same value to be returned on subsequent requests.'
 		);
 		$this->assertEquals( $value, wp_cache_get( $key ) );
+	}
+
+	function test_does_not_cache_exceptions() {
+		$key = 'some-cache-key-' . uniqid();
+
+		try {
+			wp_cache_remember( $key, function () {
+				throw new Exception( 'Something went wrong!' );
+			} );
+
+		} catch ( Exception $e ) {
+			$this->assertFalse( wp_cache_get( $key ), 'Expected the exception to not be cached.' );
+			return;
+		}
+
+		$this->fail( 'Did not receive expected exception!' );
+	}
+
+	function test_does_not_cache_wp_errors() {
+		$key = 'some-cache-key-' . uniqid();
+
+		wp_cache_remember( $key, function () {
+			return new WP_Error( 'code', 'Something went wrong!' );
+		} );
+
+		$this->assertFalse( wp_cache_get( $key ), 'Expected the WP_Error to not be cached.' );
 	}
 
 	function test_remember_pulls_from_cache() {
