@@ -2,7 +2,7 @@
 /**
  * Tests for the site transient functions.
  *
- * @package Wp_Cache_Remember
+ * @package SteveGrunwell\WPCacheRemember
  */
 
 /**

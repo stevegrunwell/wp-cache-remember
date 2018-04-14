@@ -2,7 +2,7 @@
 /**
  * Tests for the object cache functions.
  *
- * @package Wp_Cache_Remember
+ * @package SteveGrunwell\WPCacheRemember
  */
 
 /**
