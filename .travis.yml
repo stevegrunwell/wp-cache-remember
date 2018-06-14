@@ -15,6 +15,8 @@ matrix:
     - php: 7.2
       env: WP_VERSION=trunk
     - php: 7.2
+      env: WP_VERSION=trunk COMPOSER_ARGS="--prefer-lowest"
+    - php: 7.2
       env: WP_VERSION=latest RUN_PHPCS=1 RUN_CODE_COVERAGE=1
     - php: 7.1
       env: WP_VERSION=latest
@@ -36,7 +38,10 @@ before_script:
       bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
       composer global require "phpunit/phpunit=4.8.*|5.7.*"
     fi
-  - composer install --prefer-dist --no-suggest --no-autoloader
+  - |
+    if [[ ! -z "$COMPOSER_ARGS" ]]; then
+      composer install --prefer-dist --no-suggest --no-autoloader $COMPOSER_ARGS
+    fi
 
 script:
   - |
