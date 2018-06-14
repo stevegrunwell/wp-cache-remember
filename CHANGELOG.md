@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-* Lower the minimum version of [composer/installers](https://github.com/composer/installers) to `^1.0` ([#2]).
+* Lower the minimum version of [composer/installers](https://github.com/composer/installers) to `^1.0` ([#2], props @aaemnnosttv).
 
 ## [1.1.0] - 2018-04-14
 
