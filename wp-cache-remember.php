@@ -5,7 +5,7 @@
  * Description: Helper for the WordPress object cache and transients.
  * Author:      Steve Grunwell
  * Author URI:  https://stevegrunwell.com
- * Version:     1.1.0
+ * Version:     1.1.1
  *
  * @package SteveGrunwell\WPCacheRemember
  */
