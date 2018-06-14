@@ -15,7 +15,7 @@ matrix:
     - php: 7.2
       env: WP_VERSION=trunk
     - php: 7.2
-      env: WP_VERSION=trunk COMPOSER_ARGS="--prefer-lowest"
+      env: WP_VERSION=trunk COMPOSER_LOWEST=1
     - php: 7.2
       env: WP_VERSION=latest RUN_PHPCS=1 RUN_CODE_COVERAGE=1
     - php: 7.1
@@ -39,8 +39,10 @@ before_script:
       composer global require "phpunit/phpunit=4.8.*|5.7.*"
     fi
   - |
-    if [[ ! -z "$COMPOSER_ARGS" ]]; then
-      composer install --prefer-dist --no-suggest --no-autoloader $COMPOSER_ARGS
+    if [[ ${COMPOSER_LOWEST} ]]; then
+      composer update $COMPOSER_ARGS
+    else
+      composer install --prefer-dist --no-suggest --no-autoloader
     fi
 
 script:
