@@ -30,9 +30,12 @@ class ObjectCacheTest extends WP_UnitTestCase {
 		$key = 'some-cache-key-' . uniqid();
 
 		try {
-			wp_cache_remember( $key, function () {
-				throw new Exception( 'Something went wrong!' );
-			} );
+			wp_cache_remember(
+				$key,
+				function () {
+					throw new Exception( 'Something went wrong!' );
+				}
+			);
 
 		} catch ( Exception $e ) {
 			$this->assertFalse( wp_cache_get( $key ), 'Expected the exception to not be cached.' );
@@ -45,9 +48,12 @@ class ObjectCacheTest extends WP_UnitTestCase {
 	function test_does_not_cache_wp_errors() {
 		$key = 'some-cache-key-' . uniqid();
 
-		wp_cache_remember( $key, function () {
-			return new WP_Error( 'code', 'Something went wrong!' );
-		} );
+		wp_cache_remember(
+			$key,
+			function () {
+				return new WP_Error( 'code', 'Something went wrong!' );
+			}
+		);
 
 		$this->assertFalse( wp_cache_get( $key ), 'Expected the WP_Error to not be cached.' );
 	}
