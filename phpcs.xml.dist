@@ -13,7 +13,8 @@
 	<arg value="ps"/>
 
 	<!-- Scan for compatibility with PHP >= 5.2. -->
-	<rule ref="PHPCompatibility">
+	<rule ref="PHPCompatibilityWP"/>
+	<rule ref="PHPCompatibility.FunctionDeclarations.NewClosure">
 		<exclude-pattern>tests/*</exclude-pattern>
 	</rule>
 	<config name="testVersion" value="5.2-"/>
