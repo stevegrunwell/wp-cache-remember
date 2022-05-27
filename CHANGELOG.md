@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.1.2] - 2022-05-26
 
+* Update PHP compatiblity checks ([#6], props @jrfnl)
+* Update test builds ([#6], props @jrfnl)
 * Allow recent versions of [composer/installers](https://github.com/composer/installers) and [dealerdirect/phpcodesniffer-composer-installer](https://github.com/PHPCSStandards/composer-installer) packages ([#7], props @macbookandrew)
 
 ## [1.1.1] - 2018-06-14
