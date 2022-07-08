@@ -30,9 +30,12 @@ class SiteTransientTest extends WP_UnitTestCase {
 		$key = 'some-cache-key-' . uniqid();
 
 		try {
-			remember_site_transient( $key, function () {
-				throw new Exception( 'Something went wrong!' );
-			} );
+			remember_site_transient(
+				$key,
+				function () {
+					throw new Exception( 'Something went wrong!' );
+				}
+			);
 
 		} catch ( Exception $e ) {
 			$this->assertFalse( get_site_transient( $key ), 'Expected the exception to not be cached.' );
@@ -45,9 +48,12 @@ class SiteTransientTest extends WP_UnitTestCase {
 	function test_does_not_remember_wp_errors() {
 		$key = 'some-cache-key-' . uniqid();
 
-		remember_site_transient( $key, function () {
-			return new WP_Error( 'code', 'Something went wrong!' );
-		} );
+		remember_site_transient(
+			$key,
+			function () {
+				return new WP_Error( 'code', 'Something went wrong!' );
+			}
+		);
 
 		$this->assertFalse( get_site_transient( $key ), 'Expected the WP_Error to not be cached.' );
 	}
